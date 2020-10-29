@@ -1,0 +1,77 @@
+*{box-sizing: border-box;}
+
+body{
+background-color: #fff;
+}
+.wrapper{
+	width: 960px;
+	margin:0 auto
+}
+
+.filter-form{
+    background-color: #a5f531;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0px 50px 0;
+}
+
+.sort-form{
+    background-color: #6dbb30;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0px 50px 0;
+}
+
+.input-form{
+    background-color: #3e7319;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0px 50px 0;
+}
+
+.card-list{
+    background-color: #244510;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-between;
+}
+
+.card-list__card{
+    width: 100%;
+    background-color: #a5f531;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(33% - 10px);
+    justify-content: space-between;
+    height: 100px;
+    margin: 15px 5px 15px 5px;
+}
+
+.price-sum{
+    background-color:#0b1607;
+    color:#a5f531;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 43pt;
+    padding: 50px 0px 50px 0;
+}
+
+.filtered-from-to, .sorted{
+    background-color:#a5f531;
+    color:#0b1607;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 43pt;
+    padding: 50px 0px 50px 0;
+}

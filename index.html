@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form class="filter-form">
+            <input class="filter-form__from-value" type="text" id="from" name="from" placeholder="from">
+            <input class="filter-form__to-value" type="text" id="to" name="to" placeholder="to">
+            <input class = "sort-form__button-filter" type="submit" value="Отфильтровать">
+        </form>
+    
+        <form class="sort-form">
+            <select class="sort-form__select">
+                <option>NONE</option>
+                <option>ASC</option>
+                <option>DESC</option>
+              </select>
+              <input class = "sort-form__button-sort" type="submit" value="Отсортировать">
+        </form>
+    
+        <form class="input-form">
+            <input class="input-form__name-input" type="text" id="name" name="name" placeholder="name">
+            <input class="input-form__price-input" type="text" id="price" name="price" placeholder="price">
+            <input class="input-form__description-input" type="text" id="description" name="description" placeholder="description">
+            <input class = "input-form__button-input" type="submit" value="Добавить">
+        </form>
+        <ul class="card-list">
+            
+        </ul>
+        <div class="filtered-from-to"></div>
+        <div class="sorted"></div>
+        <div class="price-sum"></div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
