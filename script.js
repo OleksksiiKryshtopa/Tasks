@@ -37,20 +37,20 @@ window.onload = () => {
     if (!to) to = Infinity;
 
     
-    const filteredCards = cards.filter(
+    const resultedCards = cards.filter(
       (item) => from <= item.price && to >= item.price
     );
 
-    const sortedCards = filteredCards.slice();
+   // const sortedCards = filteredCards.slice();
 
     if (sortState != 'NONE') {
-      sortedCards.sort((a, b) => (a.price > b.price ? 1 : -1));
+      resultedCards.sort((a, b) => (a.price - b.price));
       if (sortState == 'DESC') {
-        sortedCards.reverse();
+        resultedCards.reverse();
       }
     }
 
-    sortedCards.forEach((card) => {
+    resultedCards.forEach((card) => {
       cardList.append(
         createCard(card.name, card.price, card.description, card.id)
       );
