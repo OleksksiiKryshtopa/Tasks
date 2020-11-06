@@ -1,42 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
     <div class="wrapper">
-        <form class="filter-form">
-            <input class="filter-form__from-value" type="text" id="from" name="from" placeholder="from">
-            <input class="filter-form__to-value" type="text" id="to" name="to" placeholder="to">
-            <input class = "sort-form__button-filter" type="submit" value="Отфильтровать">
-        </form>
-    
-        <form class="sort-form">
+      <h1 class="logo">Leha cards</h1>
+      <div class="card-form">
+        <div class="card-form__create-card">
+          <h3 class="card-form__create-card__filter-info">Фильтр:</h3>
+          <input
+            class="card-form__create-card__input"
+            type="button"
+            value="+"
+          />
+        </div>
+        <div class="sort-filter-form">
+          <form class="filter-form">
+            <input
+              class="filter-form__from-input"
+              type="text"
+              id="from"
+              name="from"
+              autocomplete="off"
+              placeholder="from"
+            />
+            <input
+              class="filter-form__to-input"
+              type="text"
+              id="to"
+              name="to"
+              autocomplete="off"
+              placeholder="to"
+            />
+            <input
+              class="sort-form__button-filter"
+              type="submit"
+              value="Отфильтровать"
+            />
+          </form>
+          <form class="sort-form">
             <select class="sort-form__select">
-                <option>NONE</option>
-                <option>ASC</option>
-                <option>DESC</option>
-              </select>
-              <input class = "sort-form__button-sort" type="submit" value="Отсортировать">
-        </form>
-    
-        <form class="input-form">
-            <input class="input-form__name-input" type="text" id="name" name="name" placeholder="name">
-            <input class="input-form__price-input" type="text" id="price" name="price" placeholder="price">
-            <input class="input-form__description-input" type="text" id="description" name="description" placeholder="description">
-            <input class = "input-form__button-input" type="submit" value="Добавить">
-        </form>
-        <ul class="card-list">
-            
-        </ul>
+              <option>NONE</option>
+              <option>ASC</option>
+              <option>DESC</option>
+            </select>
+            <input
+              class="sort-form__button-sort"
+              type="submit"
+              value="Отсортировать"
+            />
+          </form>
+        </div>
+      </div>
+
+      <ul class="card-list"></ul>
+      <div class="card-info">
         <div class="filtered-from-to"></div>
         <div class="sorted"></div>
         <div class="price-sum"></div>
+      </div>
     </div>
+
+    <div class="modal">
+      <div class="modal__overlay">
+        <div class="modal__overlay__window">
+          <div class="modal__overlay__window__header">
+            <span
+              ><div class="modal__overlay__window__header__title">
+                Добавление карточки
+              </div></span
+            >
+            <span
+              ><div class="modal__overlay__window__header__close">
+                <input class="close-card" type="button" value="&times;" /></div
+            ></span>
+          </div>
+          <div class="modal__overlay__window__body">
+            <form class="input-form">
+              <input
+                class="input-form__name-input"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="off"
+                placeholder="name"
+              />
+              <input
+                class="input-form__price-input"
+                type="text"
+                id="price"
+                name="price"
+                autocomplete="off"
+                placeholder="price"
+              />
+              <input
+                class="input-form__description-input"
+                type="text"
+                id="description"
+                name="description"
+                autocomplete="off"
+                placeholder="description"
+              />
+
+              <input
+                class="input-form__button-input"
+                type="submit"
+                value="Добавить"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
-    
-</body>
+  </body>
 </html>

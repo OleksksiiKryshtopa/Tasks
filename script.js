@@ -8,6 +8,19 @@ window.onload = () => {
   const filterForm = document.querySelector('.filter-form');
   const sortForm = document.querySelector('.sort-form');
 
+  const nameInput = document.querySelector('.input-form__name-input');
+  const priceInput = document.querySelector('.input-form__price-input');
+  const descriptionInput = document.querySelector(
+    '.input-form__description-input'
+  );
+
+  const createCardButton = document.querySelector('.card-form__create-card__input');
+  const closeCardButton = document.querySelector('.close-card');
+  const modalWindow = document.querySelector('.modal');
+
+  const validatePrice = (price) => {
+    return price >= 0 ? true : false;
+  };
   const setCards = (newCards) => {
     cards = newCards;
     fullUpdate();
@@ -36,15 +49,12 @@ window.onload = () => {
     if (!from) from = 0;
     if (!to) to = Infinity;
 
-    
     const resultedCards = cards.filter(
       (item) => from <= item.price && to >= item.price
     );
 
-   // const sortedCards = filteredCards.slice();
-
     if (sortState != 'NONE') {
-      resultedCards.sort((a, b) => (a.price - b.price));
+      resultedCards.sort((a, b) => a.price - b.price);
       if (sortState == 'DESC') {
         resultedCards.reverse();
       }
@@ -101,16 +111,12 @@ window.onload = () => {
   inputForm.onsubmit = (e) => {
     e.preventDefault();
 
-    const nameInput = document.querySelector('.input-form__name-input');
-    const priceInput = document.querySelector('.input-form__price-input');
-    const descriptionInput = document.querySelector(
-      '.input-form__description-input'
-    );
     const name = nameInput.value;
     const price = priceInput.value;
     const description = descriptionInput.value;
     const id = index++;
 
+    
     setCards([
       ...cards,
       {
@@ -121,15 +127,19 @@ window.onload = () => {
       },
     ]);
 
+    
+
     nameInput.value = '';
     priceInput.value = '';
     descriptionInput.value = '';
+    modalWindow.classList.toggle('open');
+
   };
   filterForm.onsubmit = (e) => {
     e.preventDefault();
 
-    const fromInput = document.querySelector('.filter-form__from-value');
-    const toInput = document.querySelector('.filter-form__to-value');
+    const fromInput = document.querySelector('.filter-form__from-input');
+    const toInput = document.querySelector('.filter-form__to-input');
 
     const from = fromInput.value === '' ? null : parseInt(fromInput.value);
     const to = toInput.value === '' ? null : parseInt(toInput.value);
@@ -148,6 +158,18 @@ window.onload = () => {
 
     setSortState(newSortState);
   };
+  priceInput.onchange = (e) => {
+    const price = priceInput.value.trim();
+    
+  };
+  createCardButton.onclick = (e) => {
+    modalWindow.classList.toggle('open');
+  };
+ closeCardButton.onclick = (e) => {
+    modalWindow.classList.toggle('open');
+  };
+  
+  
 
   fullUpdate();
 };
