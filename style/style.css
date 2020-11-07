@@ -18,6 +18,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .wrapper {
   width: 960px;
@@ -29,15 +31,8 @@ body {
 }
 .sort-filter-form {
   display: flex;
-}
-
-.filter-form {
-  background-color: #fff;
-  display: flex;
   justify-content: space-around;
-  align-items:center;
-  color: #000;
-  width: 50%;
+  justify-content: center;
 }
 
 .sort-form {
@@ -46,7 +41,7 @@ body {
   justify-content: center;
   justify-content: space-around;
   align-items: center;
-  width: 50%;
+  width: 100%;
 }
 
 .input-form {

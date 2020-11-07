@@ -5,7 +5,6 @@ window.onload = () => {
   let index = 0;
 
   const inputForm = document.querySelector('.input-form');
-  const filterForm = document.querySelector('.filter-form');
   const sortForm = document.querySelector('.sort-form');
 
   const nameInput = document.querySelector('.input-form__name-input');
@@ -136,9 +135,12 @@ window.onload = () => {
     descriptionInput.value = '';
     modalWindow.classList.toggle('open');
   };
-  filterForm.onsubmit = (e) => {
+  sortForm.onsubmit = (e) => {
     e.preventDefault();
-
+    let selectedIndex = document.querySelector('.sort-form__select')
+      .selectedIndex;
+    let options = document.querySelector('.sort-form__select').options;
+    let newSortState = options[selectedIndex].text;
     const fromInput = document.querySelector('.filter-form__from-input');
     const toInput = document.querySelector('.filter-form__to-input');
 
@@ -146,17 +148,6 @@ window.onload = () => {
     const to = toInput.value === '' ? null : parseInt(toInput.value);
 
     setFilterState({ from, to });
-
-    fromInput.value = '';
-    toInput.value = '';
-  };
-  sortForm.onsubmit = (e) => {
-    e.preventDefault();
-    let selectedIndex = document.querySelector('.sort-form__select')
-      .selectedIndex;
-    let options = document.querySelector('.sort-form__select').options;
-    let newSortState = options[selectedIndex].text;
-
     setSortState(newSortState);
   };
   priceInput.onchange = (e) => {
