@@ -14,7 +14,9 @@ window.onload = () => {
     '.input-form__description-input'
   );
 
-  const createCardButton = document.querySelector('.card-form__create-card__input');
+  const createCardButton = document.querySelector(
+    '.card-form__create-card__input'
+  );
   const closeCardButton = document.querySelector('.close-card');
   const modalWindow = document.querySelector('.modal');
 
@@ -33,8 +35,11 @@ window.onload = () => {
     sortState = newSortState;
     fullUpdate();
   };
-  const getSum = () =>
-    cards.reduce((total, item) => total + parseInt(item.price, 10), 0);
+  const getSum = () => {
+    let sum = 0;
+    sum = cards.reduce((total, item) => total + parseInt(item.price, 10), 0);
+    return sum;
+  };
 
   const updateSum = () =>
     (document.querySelector('.price-sum').innerHTML = `Sum: ${getSum()}`);
@@ -116,7 +121,6 @@ window.onload = () => {
     const description = descriptionInput.value;
     const id = index++;
 
-    
     setCards([
       ...cards,
       {
@@ -127,13 +131,10 @@ window.onload = () => {
       },
     ]);
 
-    
-
     nameInput.value = '';
     priceInput.value = '';
     descriptionInput.value = '';
     modalWindow.classList.toggle('open');
-
   };
   filterForm.onsubmit = (e) => {
     e.preventDefault();
@@ -160,16 +161,13 @@ window.onload = () => {
   };
   priceInput.onchange = (e) => {
     const price = priceInput.value.trim();
-    
   };
   createCardButton.onclick = (e) => {
     modalWindow.classList.toggle('open');
   };
- closeCardButton.onclick = (e) => {
+  closeCardButton.onclick = (e) => {
     modalWindow.classList.toggle('open');
   };
-  
-  
 
   fullUpdate();
 };
